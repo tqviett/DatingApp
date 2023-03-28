@@ -2,7 +2,7 @@
   <div class="container">
     <a class="navbar-brand" routerLink="/">Dating App</a>
     <ul class="navbar-nav me-auto">
-      <ng-container *ngIf="accountService.currentUser$ |async">
+      <ng-container *ngIf="accountService.currentUser$ | async">
         <li class="nav-item">
           <a class="nav-link" routerLink="/members" routerLinkActive="active">Matches</a>
         </li>
@@ -20,7 +20,7 @@
     </ul>
 
       <div class="dropdown" *ngIf="(accountService.currentUser$ |async) as user" dropdown>
-        <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{user.user| titlecase}}</a>
+        <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{user.username| titlecase}}</a>
         <div class="dropdown-menu mt-3 " *dropdownMenu>
           <a class="dropdown-item">Edit profile</a>
           <div class="dropdown-divider"></div>
